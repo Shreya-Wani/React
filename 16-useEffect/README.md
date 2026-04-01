@@ -1,16 +1,66 @@
-# React + Vite
+# 16 - useEffect Hook 🔁
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 What This Covers
 
-Currently, two official plugins are available:
+This project introduces the **`useEffect` hook** — React's way of running **side effects** in response to state or prop changes. It demonstrates dependency arrays and independent effect tracking.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 Concepts Learned
 
-## React Compiler
+- **`useEffect` Hook** — Running code in response to component lifecycle events
+- **Dependency Array** — The second argument `[a]` tells React to re-run the effect **only when `a` changes**
+- **Multiple useEffects** — Having separate `useEffect` calls for different state variables, each with its own dependency
+- **Side Effects** — Actions like logging, API calls, or DOM manipulation that happen after render
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 File Structure
 
-## Expanding the ESLint configuration
+```
+16-useEffect/
+├── src/
+│   ├── App.jsx              # Two independent useEffect hooks tracking different states
+│   ├── main.jsx
+│   └── index.css
+└── ...
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔍 Code Highlights
+
+```jsx
+const [a, setA] = useState(0);
+const [b, setB] = useState(0);
+
+// Runs only when 'a' changes
+useEffect(function () {
+    changeA()
+}, [a]);
+
+// Runs only when 'b' changes
+useEffect(function () {
+    changeB()
+}, [b]);
+```
+
+**Two buttons that update different state variables:**
+```jsx
+<button onClick={() => setA(a + 1)}>Change A</button>
+<button onClick={() => setB(b + 1)}>Change B</button>
+```
+
+## 📌 Dependency Array Behavior
+
+| Dependency Array | When It Runs |
+|---|---|
+| `[]` (empty) | Only once, on initial mount |
+| `[a]` | On mount + every time `a` changes |
+| `[a, b]` | On mount + every time `a` or `b` changes |
+| None (omitted) | After every single render |
+
+## 🚀 How to Run
+
+```bash
+npm install
+npm run dev
+```
+
+## 💡 Key Takeaway
+
+`useEffect` lets you **synchronize your component with external systems** (APIs, DOM, timers). The dependency array gives you fine-grained control over **when** the effect runs.

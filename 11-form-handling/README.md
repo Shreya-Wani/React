@@ -1,16 +1,48 @@
-# React + Vite
+# 11 - Form Handling 📋
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 What This Covers
 
-Currently, two official plugins are available:
+This project teaches **form handling** in React — how to intercept form submissions and prevent the default browser behavior using `e.preventDefault()`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 Concepts Learned
 
-## React Compiler
+- **`onSubmit` Event** — Handling form submissions in React
+- **`e.preventDefault()`** — Preventing the default page reload that browsers do on form submit
+- **Event Handler Functions** — Defining a `submitHandler` function and passing it to the form
+- **Inline Event Handlers** — Using an inline arrow function to call the handler with the event object
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 File Structure
 
-## Expanding the ESLint configuration
+```
+11-form-handling/
+├── src/
+│   ├── App.jsx              # Form with submit handler
+│   ├── main.jsx
+│   └── index.css
+└── ...
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔍 Code Highlights
+
+```jsx
+const submitHandler = (e) => {
+    e.preventDefault();           // Prevents page reload
+    console.log('Form Submitted');
+}
+
+<form onSubmit={(e) => submitHandler(e)}>
+    <input type="text" placeholder='Enter Your Name' />
+    <button>Submit</button>
+</form>
+```
+
+## 🚀 How to Run
+
+```bash
+npm install
+npm run dev
+```
+
+## 💡 Key Takeaway
+
+In React, `e.preventDefault()` is essential for **form handling** — without it, the browser will reload the page on submit, losing all React state.

@@ -17,6 +17,16 @@ This repository documents my hands-on journey of learning **React from scratch t
 | 07 | `07-ui-project` | **UI Project (Full Page)** | Building a complete UI page, multi-component architecture (Navbar, Hero, Cards), Tailwind CSS, Lucide React icons, prop drilling through nested components |
 | 08 | `08-functions` | **Event Handling & Functions** | `onClick`, `onMouseEnter`, `onMouseLeave` events, `onChange` with input fields, event handler functions, accessing `event.target.value` |
 | 09 | `09-useState` | **useState Hook** | React state management with `useState`, increment/decrement counter, understanding re-rendering, state updater functions |
+| 10 | `10-useState-advance` | **useState Advanced** | Updating objects & arrays in state (spread operator), batch updates, functional updater `setState(prev => ...)`, immutability |
+| 11 | `11-form-handling` | **Form Handling** | `onSubmit` event, `e.preventDefault()`, form submission handling, event handler functions |
+| 12 | `12-two-way-binding` | **Two-Way Binding** | Controlled components, `value` + `onChange` pattern, clearing inputs after submit, single source of truth |
+| 13 | `13-notes-app` | **Notes App (Mini Project)** | Full CRUD notes app — add/delete notes, multiple state variables, list rendering, Tailwind CSS layout |
+| 14 | `14-localstorage` | **LocalStorage** | `setItem`, `getItem`, `removeItem`, `clear`, storing objects with `JSON.stringify/parse`, sessionStorage |
+| 15 | `15-api-calling` | **API Calling** | `fetch` API, Axios library, `async/await`, rendering API data with `useState`, JSONPlaceholder API |
+| 16 | `16-useEffect` | **useEffect Hook** | Side effects, dependency arrays `[a]`, multiple independent effects, lifecycle awareness |
+| 17 | `17-gallery-project` | **Gallery Project** | Paginated image gallery, Picsum Photos API, `useEffect` with dependencies, conditional rendering, loading states |
+| 18 | `18-react-router-dom` | **React Router DOM** | `BrowserRouter`, `Routes`, `Route`, `Link` component, SPA navigation, multi-page architecture |
+| 19 | `19-routing-advanced` | **Routing Advanced** | Layout components (Navbar + Footer), persistent layouts, `<a>` vs `<Link>` comparison, Tailwind-styled routing |
 
 ---
 
@@ -27,6 +37,8 @@ This repository documents my hands-on journey of learning **React from scratch t
 - **JavaScript (ES6+)** — Language
 - **CSS Modules** — Scoped component styling
 - **Tailwind CSS v4** — Utility-first CSS framework
+- **Axios** — HTTP client for API calls
+- **React Router DOM** — Client-side routing
 - **Lucide React** — Icon library
 - **ESLint** — Code linting
 
@@ -47,7 +59,16 @@ This repository documents my hands-on journey of learning **React from scratch t
 - ✅ Building a Full-Page UI with Multiple Components
 - ✅ Event Handling (`onClick`, `onChange`, `onMouseEnter`)
 - ✅ `useState` Hook & State Management
-- ✅ Re-rendering & Reactive UI Updates
+- ✅ Advanced State Updates (Objects, Arrays, Batch Updates)
+- ✅ Form Handling & `preventDefault()`
+- ✅ Two-Way Data Binding (Controlled Components)
+- ✅ Building a Notes App (Mini Project)
+- ✅ LocalStorage & SessionStorage
+- ✅ API Calling with `fetch` & Axios
+- ✅ `useEffect` Hook & Dependency Arrays
+- ✅ Paginated Gallery Project (API + useEffect)
+- ✅ React Router DOM (Client-Side Routing)
+- ✅ Advanced Routing with Persistent Layouts
 
 ---
 

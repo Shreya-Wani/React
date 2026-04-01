@@ -1,16 +1,59 @@
-# React + Vite
+# 15 - API Calling 🌐
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 What This Covers
 
-Currently, two official plugins are available:
+This project teaches how to make **HTTP API calls** in React using both the native `fetch` API and the **Axios** library, then display the response data dynamically.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 Concepts Learned
 
-## React Compiler
+### Using `fetch` (Commented-Out Examples)
+- **`fetch()` with `async/await`** — Making GET requests to a REST API
+- **`.json()` method** — Parsing the response (which is also asynchronous and requires `await`)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Using Axios (Active Code)
+- **`axios.get()`** — Cleaner API calls with automatic JSON parsing
+- **Destructuring the response** — `const { data } = await axios.get(url)`
+- **Storing API data in state** — Using `useState` to hold the fetched data
+- **Rendering API data** — Mapping over the data array to display user names
 
-## Expanding the ESLint configuration
+## 📂 File Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+15-api-calling/
+├── src/
+│   ├── App.jsx              # Fetches users from JSONPlaceholder API
+│   ├── main.jsx
+│   └── index.css
+└── ...
+```
+
+## 🔍 Code Highlights
+
+**Fetching data with Axios:**
+```jsx
+const [data, setData] = useState([])
+
+const getData = async () => {
+    const { data } = await axios.get('https://jsonplaceholder.typicode.com/users')
+    setData(data)
+}
+```
+
+**Rendering the fetched data:**
+```jsx
+<button onClick={getData}>Get Data</button>
+{data.map(function(elem, idx) {
+    return <h3>Hello, {elem.name} {idx}</h3>
+})}
+```
+
+## 🚀 How to Run
+
+```bash
+npm install
+npm run dev
+```
+
+## 💡 Key Takeaway
+
+**Axios** simplifies API calls compared to `fetch` — it auto-parses JSON and provides cleaner syntax. Combine API calls with `useState` to store and render dynamic data from external sources.

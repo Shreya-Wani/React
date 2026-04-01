@@ -1,16 +1,66 @@
-# React + Vite
+# 07 - UI Project (Full Page) 🖥️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 What This Covers
 
-Currently, two official plugins are available:
+A complete **multi-component UI page** resembling a digital banking platform landing page. This project combines everything learned so far — components, props, Tailwind CSS, and external icon libraries.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 Concepts Learned
 
-## React Compiler
+- **Multi-Component Architecture** — Breaking a full page into Navbar, Hero, Left/Right content sections, and Cards
+- **Prop Drilling** — Passing user data through nested component layers (`App → Section1 → Page1Content → RightContent → RightCard`)
+- **Tailwind CSS Styling** — Extensive use of Tailwind for layout, typography, colors, and responsive design
+- **Lucide React Icons** — Using the `ArrowRight` icon from the lucide-react library
+- **Dynamic Card Rendering** — Mapping over a users array to render cards with images, tags, and color-coded buttons
+- **Component Organization** — All Section1 sub-components organized in a dedicated folder
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 File Structure
 
-## Expanding the ESLint configuration
+```
+07-ui-project/
+├── src/
+│   ├── App.jsx                                  # Defines user data & renders Section1
+│   ├── components/
+│   │   └── Section1/
+│   │       ├── Section1.jsx                     # Composes Navbar + Page1Content
+│   │       ├── Navbar.jsx                       # Top bar with brand name & CTA
+│   │       ├── Page1Content.jsx                 # Left + Right layout
+│   │       ├── LeftContent.jsx                  # Hero text section
+│   │       ├── HeroText.jsx                     # Large headline text
+│   │       ├── Arrow.jsx                        # Decorative arrow element
+│   │       ├── RightContent.jsx                 # Card grid section
+│   │       ├── RightCrad.jsx                    # Individual card wrapper
+│   │       └── RightCardContent.jsx             # Card overlay with tag & arrow icon
+│   ├── main.jsx
+│   └── index.css
+└── ...
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔍 Code Highlights
+
+**App.jsx** — User data with images, colors, and tags:
+```jsx
+const users = [
+    { img: '...', color: 'bg-pink-500', tag: 'Satisfied' },
+    { img: '...', color: 'bg-purple-600', tag: 'underserved' },
+    // ...
+]
+```
+
+**RightCardContent.jsx** — Dynamic card overlay with Lucide icons:
+```jsx
+<button className={`${props.color} text-white font-medium py-2 px-7 rounded-full`}>
+    {props.tag}
+</button>
+<button><ArrowRight /></button>
+```
+
+## 🚀 How to Run
+
+```bash
+npm install
+npm run dev
+```
+
+## 💡 Key Takeaway
+
+This project teaches how to **architect a real-world UI** by decomposing it into many small components and passing data down through props.

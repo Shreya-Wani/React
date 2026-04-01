@@ -1,16 +1,47 @@
-# React + Vite
+# 04 - Cards Project (Lists & Keys) 🃏
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 What This Covers
 
-Currently, two official plugins are available:
+A **Job Board UI** built to learn how to render lists of data dynamically using `.map()` and the `key` prop in React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 Concepts Learned
 
-## React Compiler
+- **Rendering Lists with `.map()`** — Iterating over an array of objects to dynamically generate Card components
+- **The `key` Prop** — Providing a unique identifier for each list item to help React optimize re-renders
+- **Array of Objects as Data Source** — Defining structured data (job openings) and passing individual fields as props
+- **Props Destructuring** — Passing multiple props (`company`, `brandLogo`, `post`, `pay`, etc.) to a child component
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 File Structure
 
-## Expanding the ESLint configuration
+```
+04-cards-project/
+├── src/
+│   ├── App.jsx                    # Defines job data array & maps over it
+│   ├── comonents/
+│   │   └── Card.jsx               # Displays individual job card with props
+│   ├── main.jsx
+│   └── index.css                  # Card UI styling
+└── ...
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔍 Code Highlights
+
+**App.jsx** — Array of 10 job openings (Meta, Amazon, Apple, Netflix, Google, Microsoft, IBM, Tesla, NVIDIA, Oracle) rendered using `.map()`:
+```jsx
+{jobOpenings.map(function(elem, idx) {
+    return <Card key={idx} company={elem.companyName} post={elem.post} pay={elem.pay} ... />;
+})}
+```
+
+**Card.jsx** — Displays company logo, job title, tags (Full Time / Junior Level), pay rate, and location with an "Apply Now" button.
+
+## 🚀 How to Run
+
+```bash
+npm install
+npm run dev
+```
+
+## 💡 Key Takeaway
+
+When rendering lists in React, always use `.map()` with a `key` prop. This pattern is fundamental for building dynamic, data-driven UIs.

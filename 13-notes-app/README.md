@@ -1,16 +1,67 @@
-# React + Vite
+# 13 - Notes App 📝
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 What This Covers
 
-Currently, two official plugins are available:
+A functional **Notes App** that combines all previous concepts — state management, form handling, two-way binding, list rendering, and dynamic deletion. This is a hands-on **mini-project**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 Concepts Learned
 
-## React Compiler
+- **Managing Multiple State Variables** — Separate states for `title`, `description`, and the `task` array
+- **Adding Items to State Array** — Using the spread operator to copy the array and push new notes
+- **Deleting Items by Index** — Using `splice()` on a copy of the array to remove a specific note
+- **Controlled Form Inputs** — Both title and description use two-way binding
+- **List Rendering** — Mapping over the tasks array to display note cards
+- **Tailwind CSS for Layout** — Responsive split-layout (form on left, notes on right) using Tailwind
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- ✅ Add notes with a title and description
+- ✅ Display notes as styled sticky-note cards
+- ✅ Delete individual notes
+- ✅ Form clears after submission
+- ✅ Responsive two-column layout
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 File Structure
+
+```
+13-notes-app/
+├── src/
+│   ├── App.jsx              # Full notes app — form + note cards + delete
+│   ├── main.jsx
+│   └── index.css
+└── ...
+```
+
+## 🔍 Code Highlights
+
+**Adding a note:**
+```jsx
+const submitHandler = (e) => {
+    e.preventDefault()
+    const copyTask = [...task]
+    copyTask.push({ title, description })
+    setTask(copyTask)
+    setTitle('')
+    setDescription('')
+}
+```
+
+**Deleting a note:**
+```jsx
+const deleteNote = (idx) => {
+    const copyTask = [...task]
+    copyTask.splice(idx, 1)
+    setTask(copyTask)
+}
+```
+
+## 🚀 How to Run
+
+```bash
+npm install
+npm run dev
+```
+
+## 💡 Key Takeaway
+
+This project ties together **state, forms, lists, and events** into a real, working application — demonstrating how React's concepts work together in practice.

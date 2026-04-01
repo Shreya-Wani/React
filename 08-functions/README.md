@@ -1,16 +1,59 @@
-# React + Vite
+# 08 - Event Handling & Functions ⚡
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 What This Covers
 
-Currently, two official plugins are available:
+This project covers **event handling** in React — how to respond to user interactions like clicks, mouse events, and input changes using event handler functions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 Concepts Learned
 
-## React Compiler
+- **`onClick` Event** — Running a function when a button is clicked
+- **`onMouseEnter` / `onMouseLeave`** — Detecting when the mouse hovers over or leaves an element
+- **`onChange` Event** — Capturing input field changes in real-time
+- **Event Object (`e`)** — Accessing `event.target.value` to read the current input value
+- **Inline vs Named Handlers** — Defining handlers as separate functions or inline anonymous functions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 File Structure
 
-## Expanding the ESLint configuration
+```
+08-functions/
+├── src/
+│   ├── App.jsx              # Input field with onChange handler
+│   ├── main.jsx
+│   └── index.css
+└── ...
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔍 Code Highlights
+
+**Active Code** — Input field with `onChange` event:
+```jsx
+function inputChanging(val) {
+    console.log(val)
+}
+
+<input
+    onChange={function(elem) {
+        inputChanging(elem.target.value);
+    }}
+    type="text"
+    placeholder="Enter Name"
+/>
+```
+
+**Commented-Out Examples** — Click and mouse event handlers:
+```jsx
+// onClick={btnClicked}
+// onMouseEnter={mouseEnter}
+// onMouseLeave={mouseLeave}
+```
+
+## 🚀 How to Run
+
+```bash
+npm install
+npm run dev
+```
+
+## 💡 Key Takeaway
+
+React uses **camelCase event names** (like `onClick`, `onChange`) and passes functions as event handlers. The event object gives access to details about the interaction.

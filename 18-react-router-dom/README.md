@@ -1,16 +1,75 @@
-# React + Vite
+# 18 - React Router DOM 🧭
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 What This Covers
 
-Currently, two official plugins are available:
+This project introduces **client-side routing** using `react-router-dom` — enabling navigation between multiple pages **without full page reloads**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 Concepts Learned
 
-## React Compiler
+- **`BrowserRouter`** — Wrapping the app to enable routing (set up in `main.jsx`)
+- **`Routes` & `Route`** — Defining URL paths and mapping them to page components
+- **`Link` Component** — Navigation without page reload (replaces `<a>` tags)
+- **Multi-Page Architecture** — Organizing pages into a `pages/` directory
+- **Navbar Component** — A persistent navigation bar that appears on all pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 File Structure
 
-## Expanding the ESLint configuration
+```
+18-react-router-dom/
+├── src/
+│   ├── App.jsx                    # Route definitions
+│   ├── components/
+│   │   └── Navbar.jsx             # Navigation links using <Link>
+│   ├── pages/
+│   │   ├── Home.jsx               # Home page
+│   │   ├── About.jsx              # About page
+│   │   ├── Contact.jsx            # Contact page
+│   │   ├── Product.jsx            # Product page
+│   │   └── Service.jsx            # Service page
+│   ├── main.jsx                   # Wraps App in <BrowserRouter>
+│   └── index.css
+└── ...
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔍 Code Highlights
+
+**main.jsx** — Setting up BrowserRouter:
+```jsx
+import { BrowserRouter } from 'react-router-dom'
+
+createRoot(document.getElementById('root')).render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+)
+```
+
+**App.jsx** — Route definitions:
+```jsx
+<Navbar />
+<Routes>
+    <Route path='/' element={<Home />} />
+    <Route path='/about' element={<About />} />
+    <Route path='/contact' element={<Contact />} />
+    <Route path='/product' element={<Product />} />
+    <Route path='/service' element={<Service />} />
+</Routes>
+```
+
+**Navbar.jsx** — Navigation with `<Link>`:
+```jsx
+<Link to='/'>Home</Link>
+<Link to='/about'>About</Link>
+<Link to='/contact'>Contact</Link>
+```
+
+## 🚀 How to Run
+
+```bash
+npm install
+npm run dev
+```
+
+## 💡 Key Takeaway
+
+`react-router-dom` enables **SPA (Single Page Application)** routing — the page content changes based on the URL, but the browser **never fully reloads**. Use `<Link>` instead of `<a>` to avoid page refreshes.

@@ -1,16 +1,52 @@
-# React + Vite
+# 12 - Two-Way Binding 🔗
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 What This Covers
 
-Currently, two official plugins are available:
+This project demonstrates **two-way data binding** — where an input field's value is both **controlled by React state** and **updated by user input**, keeping the UI and state perfectly in sync.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 Concepts Learned
 
-## React Compiler
+- **Controlled Components** — Setting `value={title}` on an input so React controls its displayed value
+- **Two-Way Binding** — Combining `value` (state → UI) + `onChange` (UI → state) for bidirectional data flow
+- **Clearing Input After Submit** — Resetting state with `setTitle('')` which automatically clears the input
+- **Form Submission with State** — Logging the current state value on form submit
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 File Structure
 
-## Expanding the ESLint configuration
+```
+12-two-way-binding/
+├── src/
+│   ├── App.jsx              # Controlled form input with two-way binding
+│   ├── main.jsx
+│   └── index.css
+└── ...
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔍 Code Highlights
+
+```jsx
+const [title, setTitle] = useState('')
+
+const submitHandler = (e) => {
+    e.preventDefault();
+    console.log('Form Submitted By', title);
+    setTitle('')  // Clears the input field after submit
+}
+
+<input
+    type="text"
+    value={title}                          // State → UI
+    onChange={(e) => setTitle(e.target.value)}  // UI → State
+/>
+```
+
+## 🚀 How to Run
+
+```bash
+npm install
+npm run dev
+```
+
+## 💡 Key Takeaway
+
+Two-way binding creates a **single source of truth** — the state. The input always reflects the state, and the state always reflects the input. This is the foundation of **controlled components** in React.

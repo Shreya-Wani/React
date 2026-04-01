@@ -1,16 +1,54 @@
-# React + Vite
+# 06 - Tailwind CSS 🌊
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 What This Covers
 
-Currently, two official plugins are available:
+This project demonstrates how to **integrate Tailwind CSS v4** with a Vite + React project and use utility-first classes for styling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 Concepts Learned
 
-## React Compiler
+- **Tailwind CSS v4 Setup** — Installing and configuring Tailwind via `@tailwindcss/vite` plugin
+- **Utility-First Styling** — Using pre-built utility classes instead of writing custom CSS
+- **Flexbox Utilities** — Layout with `flex`, `items-center`, `justify-center`
+- **Responsive Design** — Using Tailwind's responsive and spacing utilities
+- **Dark Background** — Applying `bg-gray-800` and `h-screen` for a full-screen dark layout
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 File Structure
 
-## Expanding the ESLint configuration
+```
+06-talwind/
+├── src/
+│   ├── App.jsx              # Uses Tailwind classes for layout
+│   ├── main.jsx
+│   └── index.css            # Imports Tailwind base styles
+├── vite.config.js           # Includes @tailwindcss/vite plugin
+└── ...
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔍 Code Highlights
+
+**vite.config.js** — Tailwind v4 plugin setup:
+```js
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+})
+```
+
+**App.jsx** — Using utility classes directly:
+```jsx
+<div className='bg-gray-800 h-screen flex items-center justify-center'>
+  {/* Content */}
+</div>
+```
+
+## 🚀 How to Run
+
+```bash
+npm install
+npm run dev
+```
+
+## 💡 Key Takeaway
+
+Tailwind CSS lets you style components **without writing any custom CSS** — everything is done through utility classes directly in JSX, enabling rapid UI development.
