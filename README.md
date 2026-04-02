@@ -4,77 +4,242 @@ This repository documents my hands-on journey of learning **React from scratch t
 
 ---
 
-## 📂 Folder Structure & Topics Covered
+## 1. 🌱 Introduction to React
 
-| # | Folder | Topic | Key Concepts |
-|---|--------|-------|--------------|
-| 01 | `01-folder` | **Project Setup & Basics** | Vite setup, project structure, `main.jsx` entry point, `createRoot`, `StrictMode`, JSX fundamentals |
-| 02 | `02-components` | **Components** | Creating reusable components (`Card`, `Navigation`), importing/exporting components, component composition |
-| 03 | `03-props` | **Props** | Passing data via props (`user`, `age`, `img`), dynamic rendering with props, building reusable Card components |
-| 04 | `04-cards-project` | **Cards Project (Lists & Keys)** | Rendering lists with `.map()`, passing `key` prop, array of objects as data source, building a Job Board UI |
-| 05 | `05-css` | **CSS Modules** | Scoped styling with CSS Modules (`.module.css`), component-level styling, organized folder structure per component |
-| 06 | `06-talwind` | **Tailwind CSS** | Integrating Tailwind CSS v4 with Vite, utility-first styling, responsive layout with Flexbox utilities |
-| 07 | `07-ui-project` | **UI Project (Full Page)** | Building a complete UI page, multi-component architecture (Navbar, Hero, Cards), Tailwind CSS, Lucide React icons, prop drilling through nested components |
-| 08 | `08-functions` | **Event Handling & Functions** | `onClick`, `onMouseEnter`, `onMouseLeave` events, `onChange` with input fields, event handler functions, accessing `event.target.value` |
-| 09 | `09-useState` | **useState Hook** | React state management with `useState`, increment/decrement counter, understanding re-rendering, state updater functions |
-| 10 | `10-useState-advance` | **useState Advanced** | Updating objects & arrays in state (spread operator), batch updates, functional updater `setState(prev => ...)`, immutability |
-| 11 | `11-form-handling` | **Form Handling** | `onSubmit` event, `e.preventDefault()`, form submission handling, event handler functions |
-| 12 | `12-two-way-binding` | **Two-Way Binding** | Controlled components, `value` + `onChange` pattern, clearing inputs after submit, single source of truth |
-| 13 | `13-notes-app` | **Notes App (Mini Project)** | Full CRUD notes app — add/delete notes, multiple state variables, list rendering, Tailwind CSS layout |
-| 14 | `14-localstorage` | **LocalStorage** | `setItem`, `getItem`, `removeItem`, `clear`, storing objects with `JSON.stringify/parse`, sessionStorage |
-| 15 | `15-api-calling` | **API Calling** | `fetch` API, Axios library, `async/await`, rendering API data with `useState`, JSONPlaceholder API |
-| 16 | `16-useEffect` | **useEffect Hook** | Side effects, dependency arrays `[a]`, multiple independent effects, lifecycle awareness |
-| 17 | `17-gallery-project` | **Gallery Project** | Paginated image gallery, Picsum Photos API, `useEffect` with dependencies, conditional rendering, loading states |
-| 18 | `18-react-router-dom` | **React Router DOM** | `BrowserRouter`, `Routes`, `Route`, `Link` component, SPA navigation, multi-page architecture |
-| 19 | `19-routing-advanced` | **Routing Advanced** | Layout components (Navbar + Footer), persistent layouts, `<a>` vs `<Link>` comparison, Tailwind-styled routing |
+* What is React? Why Facebook built it (story of scalability)
+* Library vs Framework
+* Virtual DOM vs Real DOM
+* SPA vs MPA
+* Why React dominates the frontend world
+* Using React via **CDN** – First Hello World
+
+**Mini Demo:** Greeting Component
 
 ---
 
-## 🛠️ Tech Stack
+## 2. ⚙️ Prerequisites & Setup
 
-- **React 19** — UI library
-- **Vite 8** — Build tool & dev server
-- **JavaScript (ES6+)** — Language
-- **CSS Modules** — Scoped component styling
-- **Tailwind CSS v4** — Utility-first CSS framework
-- **Axios** — HTTP client for API calls
-- **React Router DOM** — Client-side routing
-- **Lucide React** — Icon library
-- **ESLint** — Code linting
+* ES6+ JavaScript quick essentials (arrow functions, destructuring, spread/rest, async/await)
+* Node.js, npm/yarn basics
+* Vite vs CRA vs Webpack (why Vite is preferred)
+* GitHub setup & pushing first React repo
+
+**Mini Demo:** Static HTML → Converted into React Component
 
 ---
 
-## 📌 What I've Covered So Far
+## 3. 📂 Folder Structure & Project Organization
 
-- ✅ React Introduction & Overview
-- ✅ Setting up React using Vite
-- ✅ JSX Fundamentals & Project Structure
-- ✅ Import & Export (Modules)
-- ✅ Real DOM vs Virtual DOM
-- ✅ Functional Components & Composition
-- ✅ Props & Dynamic Data Rendering
-- ✅ Rendering Lists with `.map()` & Keys
-- ✅ CSS Modules (Scoped Styling)
-- ✅ Tailwind CSS Integration
-- ✅ Building a Full-Page UI with Multiple Components
-- ✅ Event Handling (`onClick`, `onChange`, `onMouseEnter`)
-- ✅ `useState` Hook & State Management
-- ✅ Advanced State Updates (Objects, Arrays, Batch Updates)
-- ✅ Form Handling & `preventDefault()`
-- ✅ Two-Way Data Binding (Controlled Components)
-- ✅ Building a Notes App (Mini Project)
-- ✅ LocalStorage & SessionStorage
-- ✅ API Calling with `fetch` & Axios
-- ✅ `useEffect` Hook & Dependency Arrays
-- ✅ Paginated Gallery Project (API + useEffect)
-- ✅ React Router DOM (Client-Side Routing)
-- ✅ Advanced Routing with Persistent Layouts
+* Cleaning boilerplate (Vite/CRA)
+* Understanding `src` folder
+* Feature-based vs Atomic Design folder structures
+* Importance of scaling-ready structures
+
+**Mini Project:** Portfolio Website (basic static components)
 
 ---
 
-## 🎯 Goal
+## 4. 🧩 React Fundamentals
 
-To build a strong foundation in React and progress towards building real-world, scalable applications.
+* Functional Components (modern standard)
+* JSX & Babel explained
+* Props & Children (passing data between components)
+* Lists and Keys (importance of `key`)
+* Conditional Rendering
+* Re-render vs Render explained deeply
+
+**Mini Projects:**
+
+* Reusable Card Components
+* Static Blog Post Layout
+
+---
+
+## 5. ⚡ State Management Basics
+
+* `useState` deep dive
+* Updating state correctly (objects, arrays, immutability)
+* Batch updates in React
+* Event handling with state
+
+**Mini Project:** Counter App
+
+---
+
+## 6. 🔄 Forms, Inputs & Two-Way Binding
+
+* Controlled vs uncontrolled inputs
+* `useRef` for uncontrolled fields
+* Two-way binding in React
+* Multi-step forms
+
+**Mini Project:** Notes App / Undo List
+
+---
+
+## 7. 🎣 Side Effects with `useEffect`
+
+* Why side effects exist
+* `useEffect` without deps
+* Dependency array explained
+* Cleanup functions (timers, listeners)
+* Async patterns inside `useEffect`
+
+**Mini Project:** Gallery App (API-driven)
+
+---
+
+## 8. 📡 API Integration & Async Flows
+
+* Fetch & Axios
+* Loading, Error, Empty states
+* Debouncing & throttling
+* Pagination & Infinite Scroll
+* CSR vs SSR vs ISR explained
+
+**Mini Projects:**
+
+* Weather App
+* GitHub User Search
+
+---
+
+## 9. 🎨 Styling in React
+
+* Inline vs CSS Modules
+* Tailwind CSS with `classnames`
+* Styled Components (CSS-in-JS)
+* Responsive UI basics
+* Animation libraries intro (Framer Motion basics)
+
+**Mini Project:** Theme Switcher (Light/Dark)
+
+---
+
+## 10. 🛣️ Routing with React Router (v6+)
+
+* React Router setup
+* Routes & Nested Routes
+* Dynamic routes with params
+* Protected Routes (Auth Guards)
+* 404 handling
+* Lazy Loading + Suspense
+
+**Mini Project:** Blog Website with Multiple Pages
+
+---
+
+## 11. 🧰 Context API – Global State Without Redux
+
+* Prop drilling problem explained
+* Creating and using Context
+* Updating global state
+* When NOT to use Context
+
+**Mini Project:** Auth Context (Login/Logout System)
+
+---
+
+## 12. 🛒 Advanced State Management
+
+* `useReducer` for complex logic
+* Custom Hooks for reusable logic
+* Props Drilling vs Context vs Redux
+* Zustand / Jotai (modern state libraries)
+
+**Mini Project:** Shopping Cart with Reducer
+
+---
+
+## 13. 📦 Redux Toolkit
+
+* Why Redux Toolkit over vanilla Redux
+* Store, Reducers, Slices
+* Async Thunks for API calls
+* Integration with React
+
+**Mini Project:** Notes App with Redux Toolkit
+
+---
+
+## 14. 📡 Advanced API Handling
+
+* React Query / SWR introduction
+* Caching & Refetching
+* Infinite queries
+* Error retries
+
+**Mini Project:** Movie Listing App (TMDB API + React Query)
+
+---
+
+## 15. ⚙️ Performance & Optimization
+
+* React.memo, useMemo, useCallback
+* Debounce/Throttle custom hooks
+* Avoiding unnecessary re-renders
+* Lazy loading components
+* Image optimization
+* Profiling React apps
+
+**Mini Project:** Large List Filter
+
+---
+
+## 16. 🔐 Authentication & Authorization
+
+* JWT vs Session-based auth
+* LocalStorage vs HttpOnly Cookies
+* Firebase Auth Integration
+* Role-based guards
+* AuthContext + Protected Routes
+
+**Mini Project:** Firebase Auth Flow
+
+---
+
+## 17. 🧪 Testing & Debugging
+
+* React DevTools deep dive
+* Debugging with console & breakpoints
+* Vitest/Jest setup
+* Testing with React Testing Library
+* Snapshot testing
+* Mocking API calls
+
+**Mini Project:** Testing Todo App
+
+---
+
+## 18. 🚀 Deployment & CI/CD
+
+* Building React app for production
+* Hosting on Netlify / Vercel / GitHub Pages
+* Environment variables
+* CI/CD basics with GitHub Actions
+
+---
+
+## 19. 🏆 Final Big Project – Trello-like Task Manager
+
+* Authentication (Login/Signup)
+* Multiple boards & tasks
+* Drag & Drop with `react-beautiful-dnd`
+* Redux Toolkit + React Query combo
+* Protected routes with React Router
+* Light/Dark theme toggle
+* Testing core features
+* Deploying live
+
+---
+
+## 20. 🌟 Beyond React (Bonus Section)
+
+* React + TypeScript basics
+* Intro to Next.js (SSR, ISR)
+* Component Libraries: MUI, ShadCN
+* Monorepos (NX/Turborepo)
+* CI/CD pipelines for teams
 
 ---
 
