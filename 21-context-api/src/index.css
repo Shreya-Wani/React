@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue';
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.light{
+  background-color: rgb(139, 188, 228);
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+.dark{
+  background-color: rgb(34, 34, 34);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+.nav2{
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+}
